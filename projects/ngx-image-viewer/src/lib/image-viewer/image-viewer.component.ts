@@ -89,12 +89,14 @@ export class ImageViewerComponent implements OnInit {
   }
 
   zoomIn() {
-    this.scale *= (1 + this.config.zoomFactor);
-    this.updateStyle();
+    if (this.config?.zoomFactor) {
+      this.scale *= (1 + this.config.zoomFactor);
+      this.updateStyle();
+    }
   }
 
   zoomOut() {
-    if (this.scale > this.config.zoomFactor) {
+    if (this.config?.zoomFactor && this.scale > this.config.zoomFactor) {
       this.scale /= (1 + this.config.zoomFactor);
     }
     this.updateStyle();
