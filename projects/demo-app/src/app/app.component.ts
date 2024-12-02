@@ -1,10 +1,11 @@
 import {Component} from '@angular/core';
-import {CustomImageViewerEvent, ImageViewerConfig} from '../../../ngx-image-viewer';
+import {CustomImageViewerEvent, ImageViewerComponent, ImageViewerConfig} from '../../../ngx-image-viewer';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  imports: [ImageViewerComponent]
 })
 export class AppComponent {
   images = [

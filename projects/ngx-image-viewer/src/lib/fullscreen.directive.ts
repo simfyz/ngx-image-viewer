@@ -1,18 +1,14 @@
-import {Directive, ElementRef, Input, OnChanges} from '@angular/core';
+import {Directive, ElementRef, inject, input, OnChanges} from '@angular/core';
 import screenfull from 'screenfull';
 
-@Directive({
-  selector: '[ngxToggleFullscreen]'
-})
+@Directive({selector: '[ngxToggleFullscreen]'})
 export class ToggleFullscreenDirective implements OnChanges {
+  private el = inject(ElementRef);
 
-  @Input('ngxToggleFullscreen') isFullscreen: boolean = false;
-
-  constructor(private el: ElementRef) {
-  }
+  readonly isFullscreen = input<boolean>(false, {alias: "ngxToggleFullscreen"});
 
   ngOnChanges() {
-    if (this.isFullscreen && screenfull.isEnabled) {
+    if (this.isFullscreen() && screenfull.isEnabled) {
       screenfull.request(this.el.nativeElement);
     } else if (screenfull.isEnabled) {
       screenfull.exit();

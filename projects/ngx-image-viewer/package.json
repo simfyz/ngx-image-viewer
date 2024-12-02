@@ -1,6 +1,6 @@
 {
   "name": "@simfyz/ngx-image-viewer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Fayas Ismail (https://github.com/simfyz)",
   "description": "Angular image viewer component with Ivy support",
   "homepage": "https://github.com/simfyz/ngx-image-viewer#readme",
@@ -17,8 +17,8 @@
   "main": "src/public-api.ts",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^15.2.0",
-    "@angular/core": "^15.2.0"
+    "@angular/common": ">=17.0.0",
+    "@angular/core": ">=17.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0",

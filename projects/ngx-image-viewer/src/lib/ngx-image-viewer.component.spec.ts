@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NgxImageViewerComponent } from './ngx-image-viewer.component';
+import {NgxImageViewerComponent} from './ngx-image-viewer.component';
 
 describe('NgxImageViewerComponent', () => {
   let component: NgxImageViewerComponent;
@@ -8,9 +8,9 @@ describe('NgxImageViewerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgxImageViewerComponent ]
+      imports: [NgxImageViewerComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(NgxImageViewerComponent);
     component = fixture.componentInstance;

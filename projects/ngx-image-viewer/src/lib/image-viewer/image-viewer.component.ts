@@ -1,5 +1,7 @@
-import {Component, EventEmitter, HostListener, Inject, Input, OnInit, Optional, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, inject, Input, OnInit, Output} from '@angular/core';
 import {CustomImageViewerEvent, ImageViewerConfig} from '../image-viewer-config.model';
+import {ToggleFullscreenDirective} from '../fullscreen.directive';
+import {NgStyle} from '@angular/common';
 
 const DEFAULT_CONFIG: ImageViewerConfig = {
   btnClass: 'default',
@@ -30,9 +32,11 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
 @Component({
   selector: 'ngx-image-viewer',
   templateUrl: './image-viewer.component.html',
-  styleUrls: ['../image-viewer/image-viewer.component.scss']
+  styleUrls: ['../image-viewer/image-viewer.component.scss'],
+  imports: [ToggleFullscreenDirective, NgStyle]
 })
 export class ImageViewerComponent implements OnInit {
+  moduleConfig = inject<ImageViewerConfig>('config' as any, {optional: true})!;
 
   @Input() src: string[] = [];
 
@@ -56,10 +60,6 @@ export class ImageViewerComponent implements OnInit {
   private prevX: number = 0;
   private prevY: number = 0;
   private hovered = false;
-
-
-  constructor(@Optional() @Inject('config') public moduleConfig: ImageViewerConfig) {
-  }
 
 
   ngOnInit() {

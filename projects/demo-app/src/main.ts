@@ -1,7 +1,13 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import {bootstrapApplication, BrowserModule} from '@angular/platform-browser';
+import {AppComponent} from './app/app.component';
+import {importProvidersFrom} from '@angular/core';
+import {provideNgxImageViewer} from '../../ngx-image-viewer';
 
-import { AppModule } from './app/app.module';
 
-
-platformBrowserDynamic().bootstrapModule(AppModule)
+bootstrapApplication(AppComponent, {
+  providers: [
+    importProvidersFrom(BrowserModule),
+    provideNgxImageViewer({})
+  ]
+})
   .catch(err => console.error(err));
