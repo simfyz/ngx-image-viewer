@@ -1,6 +1,6 @@
 {
   "name": "@simfyz/ngx-image-viewer",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "Fayas Ismail (https://github.com/simfyz)",
   "description": "Angular image viewer component with Ivy support",
   "homepage": "https://github.com/simfyz/ngx-image-viewer#readme",
