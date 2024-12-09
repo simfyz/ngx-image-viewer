@@ -2,6 +2,18 @@ import {Component, EventEmitter, HostListener, inject, Input, OnInit, Output} fr
 import {CustomImageViewerEvent, ImageViewerConfig} from '../image-viewer-config.model';
 import {ToggleFullscreenDirective} from '../fullscreen.directive';
 import {NgStyle} from '@angular/common';
+import {
+  faArrowLeft,
+  faArrowRight,
+  faArrowsAlt, faExpand,
+  faMinus,
+  faPlus,
+  faRepeat,
+  faRotateLeft,
+  faRotateRight,
+  faUndo
+} from '@fortawesome/free-solid-svg-icons';
+import {FaIconComponent} from '@fortawesome/angular-fontawesome';
 
 const DEFAULT_CONFIG: ImageViewerConfig = {
   btnClass: 'default',
@@ -19,13 +31,13 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
     prev: true
   },
   btnIcons: {
-    zoomIn: 'fa-solid fa-plus',
-    zoomOut: 'fa-solid fa-minus',
-    rotateClockwise: 'fa-solid fa-repeat',
-    rotateCounterClockwise: 'fa-solid fa-undo',
-    next: 'fa-solid fa-arrow-right',
-    prev: 'fa-solid fa-arrow-left',
-    fullscreen: 'fa-solid fa-arrows-alt'
+    zoomIn: faPlus,
+    zoomOut: faMinus,
+    rotateClockwise: faRotateRight,
+    rotateCounterClockwise: faRotateLeft,
+    next: faArrowRight,
+    prev: faArrowLeft,
+    fullscreen: faExpand,
   }
 };
 
@@ -33,7 +45,7 @@ const DEFAULT_CONFIG: ImageViewerConfig = {
   selector: 'ngx-image-viewer',
   templateUrl: './image-viewer.component.html',
   styleUrls: ['../image-viewer/image-viewer.component.scss'],
-  imports: [ToggleFullscreenDirective, NgStyle]
+  imports: [ToggleFullscreenDirective, NgStyle, FaIconComponent]
 })
 export class ImageViewerComponent implements OnInit {
   moduleConfig = inject<ImageViewerConfig>('config' as any, {optional: true})!;

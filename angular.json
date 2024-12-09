@@ -71,11 +71,6 @@
             "styles": [
               "projects/demo-app/src/styles.scss"
             ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "node_modules/"
-              ]
-            },
             "scripts": [],
             "browser": "projects/demo-app/src/main.ts"
           },

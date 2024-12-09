@@ -2,7 +2,8 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/ngx-image-viewer",
   "allowedNonPeerDependencies": [
-    "screenfull"
+    "screenfull",
+    "@fortawesome/angular-fontawesome"
   ],
   "lib": {
     "entryFile": "src/public-api.ts"

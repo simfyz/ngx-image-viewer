@@ -22,45 +22,39 @@
 
   @if (config?.btnShow?.rotateCounterClockwise) {
     <button type="button" [class]="config.btnClass" (click)="rotateCounterClockwise()">
-      <span [class]="config.btnIcons?.rotateCounterClockwise"></span>
+      <fa-icon [icon]="config?.btnIcons?.rotateCounterClockwise"/>
     </button>
   }
   @if (config?.btnShow?.rotateClockwise) {
     <button type="button" [class]="config.btnClass" (click)="rotateClockwise()">
-      <span [class]="config.btnIcons?.rotateClockwise"></span>
+      <fa-icon [icon]="config?.btnIcons?.rotateClockwise"/>
     </button>
   }
 
   @if (config?.btnShow?.zoomOut) {
     <button type="button" [class]="config.btnClass" (click)="zoomOut()">
-      <span [class]="config.btnIcons?.zoomOut"></span>
+      <fa-icon [icon]="config?.btnIcons?.zoomOut"/>
     </button>
   }
   @if (config?.btnShow?.zoomIn) {
     <button type="button" [class]="config.btnClass" (click)="zoomIn()">
-      <span [class]="config.btnIcons?.zoomIn"></span>
-    </button>
-  }
-
-  @for (cBtn of config?.customBtns; track cBtn) {
-    <button type="button" [class]="config.btnClass" (click)="fireCustomEvent(cBtn.name, index)">
-      <span [class]="cBtn.icon"></span>
+      <fa-icon [icon]="config?.btnIcons?.zoomIn"/>
     </button>
   }
 
   @if (config?.allowFullscreen) {
     <button type="button" id="ngx-fs-btn" [class]="config.btnClass" (click)="toggleFullscreen()">
-      <span [class]="config.btnIcons?.fullscreen"></span>
+      <fa-icon [icon]="config.btnIcons?.fullscreen"/>
     </button>
   }
 
   @if (src.length > 1) {
     <div class="nav-button-container">
       <button type="button" [class]="config.btnClass" (click)="prevImage($event)" [disabled]="index === 0">
-        <span [class]="config.btnIcons?.prev"></span>
+        <fa-icon [icon]="config.btnIcons?.prev"/>
       </button>
       <button type="button" [class]="config.btnClass" (click)="nextImage($event)" [disabled]="index === src.length - 1">
-        <span [class]="config.btnIcons?.next"></span>
+        <fa-icon [icon]="config.btnIcons?.next"/>
       </button>
     </div>
   }

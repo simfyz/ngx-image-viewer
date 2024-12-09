@@ -1,3 +1,5 @@
+import {IconProp} from '@fortawesome/angular-fontawesome/types';
+
 export interface ImageViewerConfig {
   btnClass?: string;
   zoomFactor?: number;
@@ -16,21 +18,14 @@ export interface ImageViewerConfig {
   };
 
   btnIcons?: {
-    zoomIn?: string;
-    zoomOut?: string;
-    rotateClockwise?: string;
-    rotateCounterClockwise?: string;
-    next?: string;
-    prev?: string;
-    fullscreen?: string;
+    zoomIn?: IconProp;
+    zoomOut?: IconProp;
+    rotateClockwise?: IconProp;
+    rotateCounterClockwise?: IconProp;
+    next?: IconProp;
+    prev?: IconProp;
+    fullscreen?: IconProp;
   };
-
-  customBtns?: Array<
-    {
-      name: string;
-      icon: string;
-    }
-  >;
 }
 
 export class CustomImageViewerEvent {

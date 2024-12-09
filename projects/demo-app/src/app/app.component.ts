@@ -1,11 +1,13 @@
 import {Component} from '@angular/core';
-import {CustomImageViewerEvent, ImageViewerComponent, ImageViewerConfig} from '../../../ngx-image-viewer';
+import {CustomImageViewerEvent, ImageViewerComponent, ImageViewerConfig} from 'ngx-image-viewer';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [ImageViewerComponent]
+  imports: [
+    ImageViewerComponent
+  ]
 })
 export class AppComponent {
   images = [
@@ -17,7 +19,7 @@ export class AppComponent {
   imageIndexOne = 0;
   imageIndexTwo = 0;
 
-  config: ImageViewerConfig = {zoomFactor: 0.1, customBtns: [{name: 'print', icon: 'fa fa-print'}, {name: 'link', icon: 'fa fa-link'}]};
+  config: ImageViewerConfig = {zoomFactor: 0.1};
 
   handleEvent(event: CustomImageViewerEvent) {
     console.log(`${event?.name} has been click on img ${event?.imageIndex + 1}`);
