@@ -1,6 +1,6 @@
 {
-  "name": "@simfyz/ngx-image-viewer",
-  "version": "2.3.0",
+  "name": "@paymate-software/ngx-image-viewer",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -20,7 +20,7 @@
     "@angular/router": "^19.0.1",
     "@fortawesome/angular-fontawesome": "^1.0.0",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
-    "@simfyz/ngx-image-viewer": "file:dist/ngx-image-viewer",
+    "@paymate-software/ngx-image-viewer": "file:dist/ngx-image-viewer",
     "rxjs": "~7.8.0",
     "screenfull": "^6.0.2",
     "tslib": "^2.3.0",
